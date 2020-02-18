@@ -2,7 +2,7 @@
 
 This is a sample project for Oculus Quest using Vulkan and Visual Effect Graph.
 
-[![screenshot](http://img.youtube.com/vi/C_DgvLJiuP8/0.jpg)](http://www.youtube.com/watch?v=C_DgvLJiuP8)
+[![screenshot](http://img.youtube.com/vi/-TtlK6eY22I/0.jpg)](http://www.youtube.com/watch?v=-TtlK6eY22I)
 
 ## Requiremtnts
 
