@@ -55,10 +55,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -2968
+    x: -2993
     y: -113
-    width: 5913
-    height: 2480
+    width: 5906
+    height: 2501
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,7 +266,7 @@ VisualEffectResource:
       float uniform_b;\n    float uniform_c;\n    float uniform_d;\n    float deltaTime_b;\nCBUFFER_END\n\nstruct
       Attributes\n{\n    float stripProgress;\n    float lifetime;\n    float3 position;\n   
       float age;\n    bool alive;\n};\n\nstruct SourceAttributes\n{\n};\n\nTexture2D
-      texture_b;\nSamplerState samplertexture_b;\nfloat4 texture_b_TexelSize;\n\n\r\n\r\n#define
+      texture_a;\nSamplerState samplertexture_a;\nfloat4 texture_a_TexelSize;\n\n\n\r\n\r\n#define
       USE_DEAD_LIST (VFX_USE_ALIVE_CURRENT && !HAS_STRIPS)\r\n\r\nRWByteAddressBuffer
       attributeBuffer;\r\n\r\n#if USE_DEAD_LIST\r\nRWStructuredBuffer<uint> deadListOut;\r\n#endif\r\n\r\n#if
       VFX_HAS_INDIRECT_DRAW\r\nRWStructuredBuffer<uint> indirectBuffer;\r\n#endif\r\n\r\n#if
@@ -298,7 +298,7 @@ VisualEffectResource:
       = (uint)tmp_ba;\n\t\t\t    uint tmp_bd = tmp_bb > (uint)0 ? tmp_bb : (uint)0;\n\t\t\t   
       uint tmp_be = tmp_bd < asuint(uniform_c) ? tmp_bd : asuint(uniform_c);\n\t\t\t   
       float tmp_bf = (float)tmp_be;\n\t\t\t    float3 tmp_bh = float3(tmp_bf, (float)0,
-      (float)0);\n\t\t\t    float4 tmp_bi = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bh);\n\t\t\t   
+      (float)0);\n\t\t\t    float4 tmp_bi = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bh);\n\t\t\t   
       float tmp_bj = tmp_bi[0];\n\t\t\t    float tmp_bk = tmp_bi[1];\n\t\t\t    float
       tmp_bl = tmp_bi[2];\n\t\t\t    float3 tmp_bm = float3(tmp_bj, tmp_bk, tmp_bl);\n\t\t\t   
       float tmp_bo = frac(tmp_ba);\n\t\t\t    float tmp_bp = max(tmp_bo, (float)0);\n\t\t\t   
@@ -309,14 +309,14 @@ VisualEffectResource:
       int tmp_bz = tmp_bx + (int)1;\n\t\t\t    int tmp_cb = max(tmp_bz, (int)0);\n\t\t\t   
       int tmp_cc = min(tmp_cb, asint(uniform_d));\n\t\t\t    uint tmp_cd = (uint)tmp_cc;\n\t\t\t   
       float tmp_ce = (float)tmp_cd;\n\t\t\t    float3 tmp_cf = float3(tmp_ce, (float)0,
-      (float)0);\n\t\t\t    float4 tmp_cg = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_cf);\n\t\t\t   
+      (float)0);\n\t\t\t    float4 tmp_cg = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_cf);\n\t\t\t   
       float tmp_ch = tmp_cg[0];\n\t\t\t    float tmp_ci = tmp_cg[1];\n\t\t\t    float
       tmp_cj = tmp_cg[2];\n\t\t\t    float3 tmp_ck = float3(tmp_ch, tmp_ci, tmp_cj);\n\t\t\t   
       uint tmp_cm = tmp_bb + (uint)4294967295;\n\t\t\t    int tmp_cn = (int)tmp_cm;\n\t\t\t   
       int tmp_co = max(tmp_cn, (int)0);\n\t\t\t    int tmp_cp = min(tmp_co, asint(uniform_d));\n\t\t\t   
       uint tmp_cq = (uint)tmp_cp;\n\t\t\t    float tmp_cr = (float)tmp_cq;\n\t\t\t   
       float3 tmp_cs = float3(tmp_cr, (float)0, (float)0);\n\t\t\t    float4 tmp_ct
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_cs);\n\t\t\t    float tmp_cu
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_cs);\n\t\t\t    float tmp_cu
       = tmp_ct[0];\n\t\t\t    float tmp_cv = tmp_ct[1];\n\t\t\t    float tmp_cw =
       tmp_ct[2];\n\t\t\t    float3 tmp_cx = float3(tmp_cu, tmp_cv, tmp_cw);\n\t\t\t   
       float3 tmp_cy = tmp_ck - tmp_cx;\n\t\t\t    float3 tmp_cz = tmp_cy * tmp_cy;\n\t\t\t   
@@ -344,7 +344,7 @@ VisualEffectResource:
       int tmp_eq = max(tmp_ep, (int)0);\n\t\t\t    int tmp_er = min(tmp_eq, asint(uniform_d));\n\t\t\t   
       uint tmp_es = (uint)tmp_er;\n\t\t\t    float tmp_et = (float)tmp_es;\n\t\t\t   
       float3 tmp_eu = float3(tmp_et, (float)0, (float)0);\n\t\t\t    float4 tmp_ev
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_eu);\n\t\t\t    float tmp_ew
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_eu);\n\t\t\t    float tmp_ew
       = tmp_ev[0];\n\t\t\t    float tmp_ex = tmp_ev[1];\n\t\t\t    float tmp_ey =
       tmp_ev[2];\n\t\t\t    float3 tmp_ez = float3(tmp_ew, tmp_ex, tmp_ey);\n\t\t\t   
       float3 tmp_fa = tmp_ez - tmp_bm;\n\t\t\t    float3 tmp_fb = tmp_fa * tmp_fa;\n\t\t\t   
@@ -402,7 +402,7 @@ VisualEffectResource:
       > (uint)0 ? tmp_bb : (uint)0;\n\t\t    uint tmp_be = tmp_bd < asuint(uniform_c)
       ? tmp_bd : asuint(uniform_c);\n\t\t    float tmp_bf = (float)tmp_be;\n\t\t   
       float3 tmp_bh = float3(tmp_bf, (float)0, (float)0);\n\t\t    float4 tmp_bi
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bh);\n\t\t    float tmp_bj =
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bh);\n\t\t    float tmp_bj =
       tmp_bi[0];\n\t\t    float tmp_bk = tmp_bi[1];\n\t\t    float tmp_bl = tmp_bi[2];\n\t\t   
       float3 tmp_bm = float3(tmp_bj, tmp_bk, tmp_bl);\n\t\t    float tmp_bo = frac(tmp_ba);\n\t\t   
       float tmp_bp = max(tmp_bo, (float)0);\n\t\t    float tmp_bq = min(tmp_bp, (float)1);\n\t\t   
@@ -413,14 +413,14 @@ VisualEffectResource:
       max(tmp_bz, (int)0);\n\t\t    int tmp_cc = min(tmp_cb, asint(uniform_d));\n\t\t   
       uint tmp_cd = (uint)tmp_cc;\n\t\t    float tmp_ce = (float)tmp_cd;\n\t\t   
       float3 tmp_cf = float3(tmp_ce, (float)0, (float)0);\n\t\t    float4 tmp_cg
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_cf);\n\t\t    float tmp_ch =
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_cf);\n\t\t    float tmp_ch =
       tmp_cg[0];\n\t\t    float tmp_ci = tmp_cg[1];\n\t\t    float tmp_cj = tmp_cg[2];\n\t\t   
       float3 tmp_ck = float3(tmp_ch, tmp_ci, tmp_cj);\n\t\t    uint tmp_cm = tmp_bb
       + (uint)4294967295;\n\t\t    int tmp_cn = (int)tmp_cm;\n\t\t    int tmp_co
       = max(tmp_cn, (int)0);\n\t\t    int tmp_cp = min(tmp_co, asint(uniform_d));\n\t\t   
       uint tmp_cq = (uint)tmp_cp;\n\t\t    float tmp_cr = (float)tmp_cq;\n\t\t   
       float3 tmp_cs = float3(tmp_cr, (float)0, (float)0);\n\t\t    float4 tmp_ct
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_cs);\n\t\t    float tmp_cu =
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_cs);\n\t\t    float tmp_cu =
       tmp_ct[0];\n\t\t    float tmp_cv = tmp_ct[1];\n\t\t    float tmp_cw = tmp_ct[2];\n\t\t   
       float3 tmp_cx = float3(tmp_cu, tmp_cv, tmp_cw);\n\t\t    float3 tmp_cy = tmp_ck
       - tmp_cx;\n\t\t    float3 tmp_cz = tmp_cy * tmp_cy;\n\t\t    float tmp_da =
@@ -447,7 +447,7 @@ VisualEffectResource:
       max(tmp_ep, (int)0);\n\t\t    int tmp_er = min(tmp_eq, asint(uniform_d));\n\t\t   
       uint tmp_es = (uint)tmp_er;\n\t\t    float tmp_et = (float)tmp_es;\n\t\t   
       float3 tmp_eu = float3(tmp_et, (float)0, (float)0);\n\t\t    float4 tmp_ev
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_eu);\n\t\t    float tmp_ew =
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_eu);\n\t\t    float tmp_ew =
       tmp_ev[0];\n\t\t    float tmp_ex = tmp_ev[1];\n\t\t    float tmp_ey = tmp_ev[2];\n\t\t   
       float3 tmp_ez = float3(tmp_ew, tmp_ex, tmp_ey);\n\t\t    float3 tmp_fa = tmp_ez
       - tmp_bm;\n\t\t    float3 tmp_fb = tmp_fa * tmp_fa;\n\t\t    float tmp_fc =
@@ -503,7 +503,7 @@ VisualEffectResource:
       HAS_STRIPS 1\n\t\t#define VFX_STRIPS_UV_STRECHED 1\n\t\t#define VFX_PRIMITIVE_QUAD
       1\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t#define VFX_WORLD_SPACE 1\n\t\t#include
       \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXDefines.hlsl\"\n\t\t\n\n\t\tCBUFFER_START(parameters)\n\t\t   
-      float4 Size_b;\n\t\t    float4 uniform_c;\n\t\t    float4 uniform_d;\n\t\t   
+      float4 Size_b;\n\t\t    float4 uniform_a;\n\t\t    float4 uniform_b;\n\t\t   
       float4 Alpha_g;\n\t\tCBUFFER_END\n\t\t\n\t\tstruct Attributes\n\t\t{\n\t\t   
       float stripProgress;\n\t\t    float lifetime;\n\t\t    float3 position;\n\t\t   
       float3 color;\n\t\t    float alpha;\n\t\t    float3 axisX;\n\t\t    float3
@@ -511,7 +511,7 @@ VisualEffectResource:
       float angleZ;\n\t\t    float pivotX;\n\t\t    float pivotY;\n\t\t    float
       pivotZ;\n\t\t    float size;\n\t\t    float scaleX;\n\t\t    float scaleY;\n\t\t   
       float scaleZ;\n\t\t    float age;\n\t\t};\n\t\t\n\t\tstruct SourceAttributes\n\t\t{\n\t\t};\n\t\t\n\t\tTexture2D
-      mainTexture;\n\t\tSamplerState samplermainTexture;\n\t\tfloat4 mainTexture_TexelSize;\n\t\t\n\n\t\t\n\t\t#define
+      mainTexture;\n\t\tSamplerState samplermainTexture;\n\t\tfloat4 mainTexture_TexelSize;\n\t\t\n\t\t\n\n\t\t\n\t\t#define
       VFX_NEEDS_COLOR_INTERPOLATOR (VFX_USE_COLOR_CURRENT || VFX_USE_ALPHA_CURRENT)\n\t\t#if
       HAS_STRIPS\n\t\t#define VFX_OPTIONAL_INTERPOLATION \n\t\t#else\n\t\t#define
       VFX_OPTIONAL_INTERPOLATION nointerpolation\n\t\t#endif\n\t\t\n\t\tByteAddressBuffer
@@ -649,7 +649,7 @@ VisualEffectResource:
       /*inout */attributes.scaleY);\n\t\t\t\t{\n\t\t\t\t    SetAttribute_FDD06EC7(
       /*inout */attributes.color, float3(2.76078439, 34.8862762, 64));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t   
       float tmp_bd = attributes.age / attributes.lifetime;\n\t\t\t\t    float tmp_be
-      = SampleCurve(uniform_c,tmp_bd);\n\t\t\t\t    float tmp_bg = tmp_be + (float)-0.0250000004;\n\t\t\t\t   
+      = SampleCurve(uniform_a,tmp_bd);\n\t\t\t\t    float tmp_bg = tmp_be + (float)-0.0250000004;\n\t\t\t\t   
       float tmp_bh = attributes.stripProgress - tmp_bg;\n\t\t\t\t    float tmp_bj
       = tmp_be + (float)0.0250000004;\n\t\t\t\t    float tmp_bk = tmp_bj - tmp_bg;\n\t\t\t\t   
       float tmp_bl = tmp_bh / tmp_bk;\n\t\t\t\t    float tmp_bn = max(tmp_bl, (float)0);\n\t\t\t\t   
@@ -660,7 +660,7 @@ VisualEffectResource:
       */attributes.alpha, tmp_bt);\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    float tmp_ba
       = attributes.age / attributes.lifetime;\n\t\t\t\t    float tmp_bc = attributes.stripProgress
       * (float)0.200000003;\n\t\t\t\t    float tmp_bd = tmp_ba - tmp_bc;\n\t\t\t\t   
-      float tmp_be = SampleCurve(uniform_d,tmp_bd);\n\t\t\t\t    float3 tmp_bf =
+      float tmp_be = SampleCurve(uniform_b,tmp_bd);\n\t\t\t\t    float3 tmp_bf =
       float3(tmp_be, tmp_be, tmp_be);\n\t\t\t\t    SetAttribute_545F0ED( /*inout
       */attributes.color, tmp_bf);\n\t\t\t\t}\n\t\t\t\tAttributeFromCurve_7BA3F6A(
       /*inout */attributes.alpha, attributes.age, attributes.lifetime, Alpha_g);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
@@ -886,7 +886,7 @@ VisualEffectResource:
       /*inout */attributes.scaleY);\n\t\t\t\t{\n\t\t\t\t    SetAttribute_FDD06EC7(
       /*inout */attributes.color, float3(2.76078439, 34.8862762, 64));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t   
       float tmp_bd = attributes.age / attributes.lifetime;\n\t\t\t\t    float tmp_be
-      = SampleCurve(uniform_c,tmp_bd);\n\t\t\t\t    float tmp_bg = tmp_be + (float)-0.0250000004;\n\t\t\t\t   
+      = SampleCurve(uniform_a,tmp_bd);\n\t\t\t\t    float tmp_bg = tmp_be + (float)-0.0250000004;\n\t\t\t\t   
       float tmp_bh = attributes.stripProgress - tmp_bg;\n\t\t\t\t    float tmp_bj
       = tmp_be + (float)0.0250000004;\n\t\t\t\t    float tmp_bk = tmp_bj - tmp_bg;\n\t\t\t\t   
       float tmp_bl = tmp_bh / tmp_bk;\n\t\t\t\t    float tmp_bn = max(tmp_bl, (float)0);\n\t\t\t\t   
@@ -897,7 +897,7 @@ VisualEffectResource:
       */attributes.alpha, tmp_bt);\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    float tmp_ba
       = attributes.age / attributes.lifetime;\n\t\t\t\t    float tmp_bc = attributes.stripProgress
       * (float)0.200000003;\n\t\t\t\t    float tmp_bd = tmp_ba - tmp_bc;\n\t\t\t\t   
-      float tmp_be = SampleCurve(uniform_d,tmp_bd);\n\t\t\t\t    float3 tmp_bf =
+      float tmp_be = SampleCurve(uniform_b,tmp_bd);\n\t\t\t\t    float3 tmp_bf =
       float3(tmp_be, tmp_be, tmp_be);\n\t\t\t\t    SetAttribute_545F0ED( /*inout
       */attributes.color, tmp_bf);\n\t\t\t\t}\n\t\t\t\tAttributeFromCurve_7BA3F6A(
       /*inout */attributes.alpha, attributes.age, attributes.lifetime, Alpha_g);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
@@ -1118,8 +1118,8 @@ VisualEffectResource:
       uniform_d;\n    float deltaTime_d;\nCBUFFER_END\n\nstruct Attributes\n{\n   
       float3 velocity;\n    float age;\n    float lifetime;\n    float stripProgress;\n   
       float3 position;\n    float3 direction;\n    float rateCount_d;\n    uint eventCount;\n   
-      bool alive;\n};\n\nstruct SourceAttributes\n{\n};\n\nTexture2D texture_b;\nSamplerState
-      samplertexture_b;\nfloat4 texture_b_TexelSize;\nAppendStructuredBuffer<uint>
+      bool alive;\n};\n\nstruct SourceAttributes\n{\n};\n\nTexture2D texture_a;\nSamplerState
+      samplertexture_a;\nfloat4 texture_a_TexelSize;\n\nAppendStructuredBuffer<uint>
       eventListOut_a;\n\n\r\n\r\n#define USE_DEAD_LIST (VFX_USE_ALIVE_CURRENT &&
       !HAS_STRIPS)\r\n\r\nRWByteAddressBuffer attributeBuffer;\r\n\r\n#if USE_DEAD_LIST\r\nRWStructuredBuffer<uint>
       deadListOut;\r\n#endif\r\n\r\n#if VFX_HAS_INDIRECT_DRAW\r\nRWStructuredBuffer<uint>
@@ -1167,7 +1167,7 @@ VisualEffectResource:
       uint tmp_t = tmp_r > (uint)0 ? tmp_r : (uint)0;\n\t\t\t    uint tmp_u = tmp_t
       < asuint(uniform_c) ? tmp_t : asuint(uniform_c);\n\t\t\t    float tmp_v = (float)tmp_u;\n\t\t\t   
       float3 tmp_x = float3(tmp_v, (float)0, (float)0);\n\t\t\t    float4 tmp_y =
-      LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_x);\n\t\t\t    float tmp_z = tmp_y[0];\n\t\t\t   
+      LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_x);\n\t\t\t    float tmp_z = tmp_y[0];\n\t\t\t   
       float tmp_ba = tmp_y[1];\n\t\t\t    float tmp_bb = tmp_y[2];\n\t\t\t    float3
       tmp_bc = float3(tmp_z, tmp_ba, tmp_bb);\n\t\t\t    float tmp_be = frac(tmp_q);\n\t\t\t   
       float tmp_bf = max(tmp_be, (float)0);\n\t\t\t    float tmp_bg = min(tmp_bf,
@@ -1178,14 +1178,14 @@ VisualEffectResource:
       int tmp_br = max(tmp_bp, (int)0);\n\t\t\t    int tmp_bs = min(tmp_br, asint(uniform_d));\n\t\t\t   
       uint tmp_bt = (uint)tmp_bs;\n\t\t\t    float tmp_bu = (float)tmp_bt;\n\t\t\t   
       float3 tmp_bv = float3(tmp_bu, (float)0, (float)0);\n\t\t\t    float4 tmp_bw
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bv);\n\t\t\t    float tmp_bx
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bv);\n\t\t\t    float tmp_bx
       = tmp_bw[0];\n\t\t\t    float tmp_by = tmp_bw[1];\n\t\t\t    float tmp_bz =
       tmp_bw[2];\n\t\t\t    float3 tmp_ca = float3(tmp_bx, tmp_by, tmp_bz);\n\t\t\t   
       uint tmp_cc = tmp_r + (uint)4294967295;\n\t\t\t    int tmp_cd = (int)tmp_cc;\n\t\t\t   
       int tmp_ce = max(tmp_cd, (int)0);\n\t\t\t    int tmp_cf = min(tmp_ce, asint(uniform_d));\n\t\t\t   
       uint tmp_cg = (uint)tmp_cf;\n\t\t\t    float tmp_ch = (float)tmp_cg;\n\t\t\t   
       float3 tmp_ci = float3(tmp_ch, (float)0, (float)0);\n\t\t\t    float4 tmp_cj
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ci);\n\t\t\t    float tmp_ck
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ci);\n\t\t\t    float tmp_ck
       = tmp_cj[0];\n\t\t\t    float tmp_cl = tmp_cj[1];\n\t\t\t    float tmp_cm =
       tmp_cj[2];\n\t\t\t    float3 tmp_cn = float3(tmp_ck, tmp_cl, tmp_cm);\n\t\t\t   
       float3 tmp_co = tmp_ca - tmp_cn;\n\t\t\t    float3 tmp_cp = tmp_co * tmp_co;\n\t\t\t   
@@ -1213,7 +1213,7 @@ VisualEffectResource:
       tmp_eg = max(tmp_ef, (int)0);\n\t\t\t    int tmp_eh = min(tmp_eg, asint(uniform_d));\n\t\t\t   
       uint tmp_ei = (uint)tmp_eh;\n\t\t\t    float tmp_ej = (float)tmp_ei;\n\t\t\t   
       float3 tmp_ek = float3(tmp_ej, (float)0, (float)0);\n\t\t\t    float4 tmp_el
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ek);\n\t\t\t    float tmp_em
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ek);\n\t\t\t    float tmp_em
       = tmp_el[0];\n\t\t\t    float tmp_en = tmp_el[1];\n\t\t\t    float tmp_eo =
       tmp_el[2];\n\t\t\t    float3 tmp_ep = float3(tmp_em, tmp_en, tmp_eo);\n\t\t\t   
       float3 tmp_eq = tmp_ep - tmp_bc;\n\t\t\t    float3 tmp_er = tmp_eq * tmp_eq;\n\t\t\t   
@@ -1249,21 +1249,21 @@ VisualEffectResource:
       tmp_bd = tmp_bb > (uint)0 ? tmp_bb : (uint)0;\n\t\t\t    uint tmp_be = tmp_bd
       < asuint(uniform_c) ? tmp_bd : asuint(uniform_c);\n\t\t\t    float tmp_bf =
       (float)tmp_be;\n\t\t\t    float3 tmp_bg = float3(tmp_bf, (float)0, (float)0);\n\t\t\t   
-      float4 tmp_bh = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bg);\n\t\t\t   
+      float4 tmp_bh = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bg);\n\t\t\t   
       float tmp_bi = tmp_bh[0];\n\t\t\t    float tmp_bj = tmp_bh[1];\n\t\t\t    float
       tmp_bk = tmp_bh[2];\n\t\t\t    float3 tmp_bl = float3(tmp_bi, tmp_bj, tmp_bk);\n\t\t\t   
       int tmp_bm = (int)tmp_bb;\n\t\t\t    int tmp_bo = tmp_bm + (int)1;\n\t\t\t   
       int tmp_bq = max(tmp_bo, (int)0);\n\t\t\t    int tmp_br = min(tmp_bq, asint(uniform_d));\n\t\t\t   
       uint tmp_bs = (uint)tmp_br;\n\t\t\t    float tmp_bt = (float)tmp_bs;\n\t\t\t   
       float3 tmp_bu = float3(tmp_bt, (float)0, (float)0);\n\t\t\t    float4 tmp_bv
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bu);\n\t\t\t    float tmp_bw
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bu);\n\t\t\t    float tmp_bw
       = tmp_bv[0];\n\t\t\t    float tmp_bx = tmp_bv[1];\n\t\t\t    float tmp_by =
       tmp_bv[2];\n\t\t\t    float3 tmp_bz = float3(tmp_bw, tmp_bx, tmp_by);\n\t\t\t   
       uint tmp_cb = tmp_bb + (uint)4294967295;\n\t\t\t    int tmp_cc = (int)tmp_cb;\n\t\t\t   
       int tmp_cd = max(tmp_cc, (int)0);\n\t\t\t    int tmp_ce = min(tmp_cd, asint(uniform_d));\n\t\t\t   
       uint tmp_cf = (uint)tmp_ce;\n\t\t\t    float tmp_cg = (float)tmp_cf;\n\t\t\t   
       float3 tmp_ch = float3(tmp_cg, (float)0, (float)0);\n\t\t\t    float4 tmp_ci
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ch);\n\t\t\t    float tmp_cj
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ch);\n\t\t\t    float tmp_cj
       = tmp_ci[0];\n\t\t\t    float tmp_ck = tmp_ci[1];\n\t\t\t    float tmp_cl =
       tmp_ci[2];\n\t\t\t    float3 tmp_cm = float3(tmp_cj, tmp_ck, tmp_cl);\n\t\t\t   
       float3 tmp_cn = tmp_bz - tmp_cm;\n\t\t\t    float3 tmp_co = tmp_cn * tmp_cn;\n\t\t\t   
@@ -1290,7 +1290,7 @@ VisualEffectResource:
       int tmp_ee = (int)tmp_ed;\n\t\t\t    int tmp_ef = max(tmp_ee, (int)0);\n\t\t\t   
       int tmp_eg = min(tmp_ef, asint(uniform_d));\n\t\t\t    uint tmp_eh = (uint)tmp_eg;\n\t\t\t   
       float tmp_ei = (float)tmp_eh;\n\t\t\t    float3 tmp_ej = float3(tmp_ei, (float)0,
-      (float)0);\n\t\t\t    float4 tmp_ek = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ej);\n\t\t\t   
+      (float)0);\n\t\t\t    float4 tmp_ek = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ej);\n\t\t\t   
       float tmp_el = tmp_ek[0];\n\t\t\t    float tmp_em = tmp_ek[1];\n\t\t\t    float
       tmp_en = tmp_ek[2];\n\t\t\t    float3 tmp_eo = float3(tmp_el, tmp_em, tmp_en);\n\t\t\t   
       float3 tmp_ep = tmp_eo - tmp_bl;\n\t\t\t    float3 tmp_eq = tmp_ep * tmp_ep;\n\t\t\t   
@@ -1355,7 +1355,7 @@ VisualEffectResource:
       = attributes.stripProgress * uniform_b;\n\t\t    uint tmp_r = (uint)tmp_q;\n\t\t   
       uint tmp_t = tmp_r > (uint)0 ? tmp_r : (uint)0;\n\t\t    uint tmp_u = tmp_t
       < asuint(uniform_c) ? tmp_t : asuint(uniform_c);\n\t\t    float tmp_v = (float)tmp_u;\n\t\t   
-      float3 tmp_x = float3(tmp_v, (float)0, (float)0);\n\t\t    float4 tmp_y = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_x);\n\t\t   
+      float3 tmp_x = float3(tmp_v, (float)0, (float)0);\n\t\t    float4 tmp_y = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_x);\n\t\t   
       float tmp_z = tmp_y[0];\n\t\t    float tmp_ba = tmp_y[1];\n\t\t    float tmp_bb
       = tmp_y[2];\n\t\t    float3 tmp_bc = float3(tmp_z, tmp_ba, tmp_bb);\n\t\t   
       float tmp_be = frac(tmp_q);\n\t\t    float tmp_bf = max(tmp_be, (float)0);\n\t\t   
@@ -1366,14 +1366,14 @@ VisualEffectResource:
       tmp_bn + (int)1;\n\t\t    int tmp_br = max(tmp_bp, (int)0);\n\t\t    int tmp_bs
       = min(tmp_br, asint(uniform_d));\n\t\t    uint tmp_bt = (uint)tmp_bs;\n\t\t   
       float tmp_bu = (float)tmp_bt;\n\t\t    float3 tmp_bv = float3(tmp_bu, (float)0,
-      (float)0);\n\t\t    float4 tmp_bw = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bv);\n\t\t   
+      (float)0);\n\t\t    float4 tmp_bw = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bv);\n\t\t   
       float tmp_bx = tmp_bw[0];\n\t\t    float tmp_by = tmp_bw[1];\n\t\t    float
       tmp_bz = tmp_bw[2];\n\t\t    float3 tmp_ca = float3(tmp_bx, tmp_by, tmp_bz);\n\t\t   
       uint tmp_cc = tmp_r + (uint)4294967295;\n\t\t    int tmp_cd = (int)tmp_cc;\n\t\t   
       int tmp_ce = max(tmp_cd, (int)0);\n\t\t    int tmp_cf = min(tmp_ce, asint(uniform_d));\n\t\t   
       uint tmp_cg = (uint)tmp_cf;\n\t\t    float tmp_ch = (float)tmp_cg;\n\t\t   
       float3 tmp_ci = float3(tmp_ch, (float)0, (float)0);\n\t\t    float4 tmp_cj
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ci);\n\t\t    float tmp_ck =
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ci);\n\t\t    float tmp_ck =
       tmp_cj[0];\n\t\t    float tmp_cl = tmp_cj[1];\n\t\t    float tmp_cm = tmp_cj[2];\n\t\t   
       float3 tmp_cn = float3(tmp_ck, tmp_cl, tmp_cm);\n\t\t    float3 tmp_co = tmp_ca
       - tmp_cn;\n\t\t    float3 tmp_cp = tmp_co * tmp_co;\n\t\t    float tmp_cq =
@@ -1399,7 +1399,7 @@ VisualEffectResource:
       tmp_r + (uint)2;\n\t\t    int tmp_ef = (int)tmp_ee;\n\t\t    int tmp_eg = max(tmp_ef,
       (int)0);\n\t\t    int tmp_eh = min(tmp_eg, asint(uniform_d));\n\t\t    uint
       tmp_ei = (uint)tmp_eh;\n\t\t    float tmp_ej = (float)tmp_ei;\n\t\t    float3
-      tmp_ek = float3(tmp_ej, (float)0, (float)0);\n\t\t    float4 tmp_el = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ek);\n\t\t   
+      tmp_ek = float3(tmp_ej, (float)0, (float)0);\n\t\t    float4 tmp_el = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ek);\n\t\t   
       float tmp_em = tmp_el[0];\n\t\t    float tmp_en = tmp_el[1];\n\t\t    float
       tmp_eo = tmp_el[2];\n\t\t    float3 tmp_ep = float3(tmp_em, tmp_en, tmp_eo);\n\t\t   
       float3 tmp_eq = tmp_ep - tmp_bc;\n\t\t    float3 tmp_er = tmp_eq * tmp_eq;\n\t\t   
@@ -1434,20 +1434,20 @@ VisualEffectResource:
       uint tmp_bd = tmp_bb > (uint)0 ? tmp_bb : (uint)0;\n\t\t    uint tmp_be = tmp_bd
       < asuint(uniform_c) ? tmp_bd : asuint(uniform_c);\n\t\t    float tmp_bf = (float)tmp_be;\n\t\t   
       float3 tmp_bg = float3(tmp_bf, (float)0, (float)0);\n\t\t    float4 tmp_bh
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bg);\n\t\t    float tmp_bi =
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bg);\n\t\t    float tmp_bi =
       tmp_bh[0];\n\t\t    float tmp_bj = tmp_bh[1];\n\t\t    float tmp_bk = tmp_bh[2];\n\t\t   
       float3 tmp_bl = float3(tmp_bi, tmp_bj, tmp_bk);\n\t\t    int tmp_bm = (int)tmp_bb;\n\t\t   
       int tmp_bo = tmp_bm + (int)1;\n\t\t    int tmp_bq = max(tmp_bo, (int)0);\n\t\t   
       int tmp_br = min(tmp_bq, asint(uniform_d));\n\t\t    uint tmp_bs = (uint)tmp_br;\n\t\t   
       float tmp_bt = (float)tmp_bs;\n\t\t    float3 tmp_bu = float3(tmp_bt, (float)0,
-      (float)0);\n\t\t    float4 tmp_bv = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_bu);\n\t\t   
+      (float)0);\n\t\t    float4 tmp_bv = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_bu);\n\t\t   
       float tmp_bw = tmp_bv[0];\n\t\t    float tmp_bx = tmp_bv[1];\n\t\t    float
       tmp_by = tmp_bv[2];\n\t\t    float3 tmp_bz = float3(tmp_bw, tmp_bx, tmp_by);\n\t\t   
       uint tmp_cb = tmp_bb + (uint)4294967295;\n\t\t    int tmp_cc = (int)tmp_cb;\n\t\t   
       int tmp_cd = max(tmp_cc, (int)0);\n\t\t    int tmp_ce = min(tmp_cd, asint(uniform_d));\n\t\t   
       uint tmp_cf = (uint)tmp_ce;\n\t\t    float tmp_cg = (float)tmp_cf;\n\t\t   
       float3 tmp_ch = float3(tmp_cg, (float)0, (float)0);\n\t\t    float4 tmp_ci
-      = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ch);\n\t\t    float tmp_cj =
+      = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ch);\n\t\t    float tmp_cj =
       tmp_ci[0];\n\t\t    float tmp_ck = tmp_ci[1];\n\t\t    float tmp_cl = tmp_ci[2];\n\t\t   
       float3 tmp_cm = float3(tmp_cj, tmp_ck, tmp_cl);\n\t\t    float3 tmp_cn = tmp_bz
       - tmp_cm;\n\t\t    float3 tmp_co = tmp_cn * tmp_cn;\n\t\t    float tmp_cp =
@@ -1473,7 +1473,7 @@ VisualEffectResource:
       int tmp_ee = (int)tmp_ed;\n\t\t    int tmp_ef = max(tmp_ee, (int)0);\n\t\t   
       int tmp_eg = min(tmp_ef, asint(uniform_d));\n\t\t    uint tmp_eh = (uint)tmp_eg;\n\t\t   
       float tmp_ei = (float)tmp_eh;\n\t\t    float3 tmp_ej = float3(tmp_ei, (float)0,
-      (float)0);\n\t\t    float4 tmp_ek = LoadTexture(VFX_SAMPLER(texture_b),(int3)tmp_ej);\n\t\t   
+      (float)0);\n\t\t    float4 tmp_ek = LoadTexture(VFX_SAMPLER(texture_a),(int3)tmp_ej);\n\t\t   
       float tmp_el = tmp_ek[0];\n\t\t    float tmp_em = tmp_ek[1];\n\t\t    float
       tmp_en = tmp_ek[2];\n\t\t    float3 tmp_eo = float3(tmp_el, tmp_em, tmp_en);\n\t\t   
       float3 tmp_ep = tmp_eo - tmp_bl;\n\t\t    float3 tmp_eq = tmp_ep * tmp_ep;\n\t\t   
@@ -1610,7 +1610,7 @@ VisualEffectResource:
       1\n#define VFX_USE_ALPHA_CURRENT 1\n#define VFX_USE_AGE_CURRENT 1\n#define
       VFX_USE_EVENTCOUNT_CURRENT 1\n#define VFX_USE_ALIVE_CURRENT 1\n#define VFX_USE_STRIPALIVE_CURRENT
       1\n#define VFX_WORLD_SPACE 1\n#include \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXDefines.hlsl\"\n\n\r\nCBUFFER_START(parameters)\n   
-      float4 Alpha_b;\n    float3 uniform_b;\n    float deltaTime_c;\nCBUFFER_END\n\nstruct
+      float4 Alpha_b;\n    float3 uniform_a;\n    float deltaTime_c;\nCBUFFER_END\n\nstruct
       Attributes\n{\n    float3 position;\n    float3 velocity;\n    float lifetime;\n   
       float rateCount_c;\n    float alpha;\n    float age;\n    uint eventCount;\n   
       bool alive;\n    bool stripAlive;\n};\n\nstruct SourceAttributes\n{\n};\n\nAppendStructuredBuffer<uint>
@@ -1661,7 +1661,7 @@ VisualEffectResource:
       float tmp_u = tmp_q[2];\n\t\t\t    float tmp_v = tmp_u * (float)2;\n\t\t\t   
       float tmp_w = tmp_q[3];\n\t\t\t    float tmp_x = tmp_w * (float)2;\n\t\t\t   
       float3 tmp_y = float3(tmp_t, tmp_v, tmp_x);\n\t\t\t    float3 tmp_z = tmp_y
-      * uniform_b;\n\t\t\t    float3 tmp_bb = tmp_z * float3(2, 2, 2);\n\t\t\t   
+      * uniform_a;\n\t\t\t    float3 tmp_bb = tmp_z * float3(2, 2, 2);\n\t\t\t   
       SetAttribute_C707D62A( /*inout */attributes.position, tmp_bb);\n\t\t\t}\n\t\t\tAttributeFromCurve_7BA3F6A(
       /*inout */attributes.alpha, attributes.age, attributes.lifetime, Alpha_b);\n\t\t\t{\n\t\t\t   
       attributes.eventCount = 0u;\n\t\t\t    GPUEventRate_1( /*inout */attributes.rateCount_c, 
@@ -1708,7 +1708,7 @@ VisualEffectResource:
       float tmp_r = tmp_q[1];\n\t\t    float tmp_t = tmp_r * (float)2;\n\t\t    float
       tmp_u = tmp_q[2];\n\t\t    float tmp_v = tmp_u * (float)2;\n\t\t    float tmp_w
       = tmp_q[3];\n\t\t    float tmp_x = tmp_w * (float)2;\n\t\t    float3 tmp_y
-      = float3(tmp_t, tmp_v, tmp_x);\n\t\t    float3 tmp_z = tmp_y * uniform_b;\n\t\t   
+      = float3(tmp_t, tmp_v, tmp_x);\n\t\t    float3 tmp_z = tmp_y * uniform_a;\n\t\t   
       float3 tmp_bb = tmp_z * float3(2, 2, 2);\n\t\t    SetAttribute_C707D62A( /*inout
       */attributes.position, tmp_bb);\n\t\t}\n\t\tAttributeFromCurve_7BA3F6A( /*inout
       */attributes.alpha, attributes.age, attributes.lifetime, Alpha_b);\n\t\t{\n\t\t   
@@ -1891,7 +1891,7 @@ VisualEffectResource:
       pivotX;\n\t\t    float pivotY;\n\t\t    float pivotZ;\n\t\t    float size;\n\t\t   
       float scaleX;\n\t\t    float scaleY;\n\t\t    float scaleZ;\n\t\t    float
       age;\n\t\t};\n\t\t\n\t\tstruct SourceAttributes\n\t\t{\n\t\t};\n\t\t\n\t\tTexture2D
-      mainTexture;\n\t\tSamplerState samplermainTexture;\n\t\tfloat4 mainTexture_TexelSize;\n\t\t\n\n\t\t\n\t\t#define
+      mainTexture;\n\t\tSamplerState samplermainTexture;\n\t\tfloat4 mainTexture_TexelSize;\n\t\t\n\t\t\n\n\t\t\n\t\t#define
       VFX_NEEDS_COLOR_INTERPOLATOR (VFX_USE_COLOR_CURRENT || VFX_USE_ALPHA_CURRENT)\n\t\t#if
       HAS_STRIPS\n\t\t#define VFX_OPTIONAL_INTERPOLATION \n\t\t#else\n\t\t#define
       VFX_OPTIONAL_INTERPOLATION nointerpolation\n\t\t#endif\n\t\t\n\t\tByteAddressBuffer
@@ -3593,7 +3593,7 @@ VisualEffectResource:
         index: 10
       - nameId: deltaTime_b
         index: 30
-      - nameId: texture_b
+      - nameId: texture_a
         index: 12
       params: []
       processor: {fileID: 0}
@@ -3608,9 +3608,9 @@ VisualEffectResource:
       values:
       - nameId: Size_b
         index: 62
-      - nameId: uniform_c
+      - nameId: uniform_a
         index: 20
-      - nameId: uniform_d
+      - nameId: uniform_b
         index: 31
       - nameId: Alpha_g
         index: 59
@@ -3685,7 +3685,7 @@ VisualEffectResource:
         index: 36
       - nameId: deltaTime_d
         index: 30
-      - nameId: texture_b
+      - nameId: texture_a
         index: 12
       params: []
       processor: {fileID: 0}
@@ -3746,7 +3746,7 @@ VisualEffectResource:
         index: 7
       temporaryBuffers: []
       values:
-      - nameId: uniform_b
+      - nameId: uniform_a
         index: 32
       - nameId: Alpha_b
         index: 44
@@ -4882,45 +4882,11 @@ MonoBehaviour:
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
-  - {fileID: 8926484042661615133}
+  - {fileID: 8926484042661615590}
   m_OutputSlots: []
   m_Disabled: 0
   m_Subgraph: {fileID: 5371698748595113096, guid: 56bc4730042734b418e6445a2b32dade,
     type: 3}
---- !u!114 &8926484042661615133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c52d920e7fff73b498050a6b3c4404ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661615133}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661615131}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1024
-    m_Space: 2147483647
-  m_Property:
-    name: Strip Point Count
-    m_serializedType:
-      m_SerializableType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-    attributes: []
-  m_Direction: 0
-  m_LinkedSlots: []
 --- !u!114 &8926484042661615134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14802,3 +14768,37 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661615584}
+--- !u!114 &8926484042661615590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52d920e7fff73b498050a6b3c4404ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615590}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615131}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1024
+    m_Space: 2147483647
+  m_Property:
+    name: Strip Point Count
+    m_serializedType:
+      m_SerializableType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    attributes: []
+  m_Direction: 0
+  m_LinkedSlots: []
