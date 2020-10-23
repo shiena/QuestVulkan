@@ -6,7 +6,7 @@ This is a sample project for Oculus Quest using Vulkan and Visual Effect Graph.
 
 ## Requiremtnts
 
-- Unity2019.4.12f1
+- Unity2019.4.13f1
 
 ## References
 
