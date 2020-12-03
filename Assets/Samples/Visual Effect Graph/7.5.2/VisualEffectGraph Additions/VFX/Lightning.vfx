@@ -55,10 +55,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -2993
+    x: -2968
     y: -113
-    width: 5938
-    height: 2483
+    width: 5913
+    height: 2482
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -711,7 +711,7 @@ VisualEffectResource:
       normalWS = normalize(TransformNormalVFXToWorld((-transpose(elementToVFX_N)[2])));\n\t\t\t\t#ifdef
       VFX_VARYING_NORMAL\n\t\t\t\tfloat normalFlip = (size3.x * size3.y * size3.z)
       < 0 ? -1 : 1;\n\t\t\t\to.VFX_VARYING_NORMAL = normalFlip * normalWS;\n\t\t\t\t#endif\n\t\t\t\t#ifdef
-      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformNormalVFXToWorld((transpose(elementToVFX_N)[0])));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
+      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformDirectionVFXToWorld(normalize(transpose(elementToVFX)[0].xyz)));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
       VFX_VARYING_BENTFACTORS\n\t\t\t\t\n\t\t\t\t#if HAS_STRIPS\n\t\t\t\t#define
       BENT_FACTOR_MULTIPLIER 2.0f\n\t\t\t\t#else\n\t\t\t\t#define BENT_FACTOR_MULTIPLIER
       1.41421353816986083984375f\n\t\t\t\t#endif\n\t\t\t\to.VFX_VARYING_BENTFACTORS
@@ -975,7 +975,7 @@ VisualEffectResource:
       normalWS = normalize(TransformNormalVFXToWorld((-transpose(elementToVFX_N)[2])));\n\t\t\t\t#ifdef
       VFX_VARYING_NORMAL\n\t\t\t\tfloat normalFlip = (size3.x * size3.y * size3.z)
       < 0 ? -1 : 1;\n\t\t\t\to.VFX_VARYING_NORMAL = normalFlip * normalWS;\n\t\t\t\t#endif\n\t\t\t\t#ifdef
-      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformNormalVFXToWorld((transpose(elementToVFX_N)[0])));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
+      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformDirectionVFXToWorld(normalize(transpose(elementToVFX)[0].xyz)));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
       VFX_VARYING_BENTFACTORS\n\t\t\t\t\n\t\t\t\t#if HAS_STRIPS\n\t\t\t\t#define
       BENT_FACTOR_MULTIPLIER 2.0f\n\t\t\t\t#else\n\t\t\t\t#define BENT_FACTOR_MULTIPLIER
       1.41421353816986083984375f\n\t\t\t\t#endif\n\t\t\t\to.VFX_VARYING_BENTFACTORS
@@ -2114,7 +2114,7 @@ VisualEffectResource:
       normalWS = normalize(TransformNormalVFXToWorld((-transpose(elementToVFX_N)[2])));\n\t\t\t\t#ifdef
       VFX_VARYING_NORMAL\n\t\t\t\tfloat normalFlip = (size3.x * size3.y * size3.z)
       < 0 ? -1 : 1;\n\t\t\t\to.VFX_VARYING_NORMAL = normalFlip * normalWS;\n\t\t\t\t#endif\n\t\t\t\t#ifdef
-      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformNormalVFXToWorld((transpose(elementToVFX_N)[0])));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
+      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformDirectionVFXToWorld(normalize(transpose(elementToVFX)[0].xyz)));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
       VFX_VARYING_BENTFACTORS\n\t\t\t\t\n\t\t\t\t#if HAS_STRIPS\n\t\t\t\t#define
       BENT_FACTOR_MULTIPLIER 2.0f\n\t\t\t\t#else\n\t\t\t\t#define BENT_FACTOR_MULTIPLIER
       1.41421353816986083984375f\n\t\t\t\t#endif\n\t\t\t\to.VFX_VARYING_BENTFACTORS
@@ -2354,7 +2354,7 @@ VisualEffectResource:
       normalWS = normalize(TransformNormalVFXToWorld((-transpose(elementToVFX_N)[2])));\n\t\t\t\t#ifdef
       VFX_VARYING_NORMAL\n\t\t\t\tfloat normalFlip = (size3.x * size3.y * size3.z)
       < 0 ? -1 : 1;\n\t\t\t\to.VFX_VARYING_NORMAL = normalFlip * normalWS;\n\t\t\t\t#endif\n\t\t\t\t#ifdef
-      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformNormalVFXToWorld((transpose(elementToVFX_N)[0])));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
+      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformDirectionVFXToWorld(normalize(transpose(elementToVFX)[0].xyz)));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
       VFX_VARYING_BENTFACTORS\n\t\t\t\t\n\t\t\t\t#if HAS_STRIPS\n\t\t\t\t#define
       BENT_FACTOR_MULTIPLIER 2.0f\n\t\t\t\t#else\n\t\t\t\t#define BENT_FACTOR_MULTIPLIER
       1.41421353816986083984375f\n\t\t\t\t#endif\n\t\t\t\to.VFX_VARYING_BENTFACTORS

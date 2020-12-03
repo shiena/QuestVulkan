@@ -56,7 +56,7 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614664}
-  - {fileID: 8926484042661614858}
+  - {fileID: 8926484042661614859}
   - {fileID: 114158099937248418}
   - {fileID: 8926484042661614854}
   m_OutputSlots: []
@@ -266,8 +266,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: -381
     y: -241
-    width: 1520
-    height: 2312
+    width: 1488
+    height: 2331
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1616,7 +1616,7 @@ VisualEffectResource:
       normalWS = normalize(TransformNormalVFXToWorld((-transpose(elementToVFX_N)[2])));\n\t\t\t\t#ifdef
       VFX_VARYING_NORMAL\n\t\t\t\tfloat normalFlip = (size3.x * size3.y * size3.z)
       < 0 ? -1 : 1;\n\t\t\t\to.VFX_VARYING_NORMAL = normalFlip * normalWS;\n\t\t\t\t#endif\n\t\t\t\t#ifdef
-      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformNormalVFXToWorld((transpose(elementToVFX_N)[0])));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
+      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformDirectionVFXToWorld(normalize(transpose(elementToVFX)[0].xyz)));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
       VFX_VARYING_BENTFACTORS\n\t\t\t\t\n\t\t\t\t#if HAS_STRIPS\n\t\t\t\t#define
       BENT_FACTOR_MULTIPLIER 2.0f\n\t\t\t\t#else\n\t\t\t\t#define BENT_FACTOR_MULTIPLIER
       1.41421353816986083984375f\n\t\t\t\t#endif\n\t\t\t\to.VFX_VARYING_BENTFACTORS
@@ -1856,7 +1856,7 @@ VisualEffectResource:
       normalWS = normalize(TransformNormalVFXToWorld((-transpose(elementToVFX_N)[2])));\n\t\t\t\t#ifdef
       VFX_VARYING_NORMAL\n\t\t\t\tfloat normalFlip = (size3.x * size3.y * size3.z)
       < 0 ? -1 : 1;\n\t\t\t\to.VFX_VARYING_NORMAL = normalFlip * normalWS;\n\t\t\t\t#endif\n\t\t\t\t#ifdef
-      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformNormalVFXToWorld((transpose(elementToVFX_N)[0])));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
+      VFX_VARYING_TANGENT\n\t\t\t\to.VFX_VARYING_TANGENT = normalize(TransformDirectionVFXToWorld(normalize(transpose(elementToVFX)[0].xyz)));\n\t\t\t\t#endif\n\t\t\t\t#ifdef
       VFX_VARYING_BENTFACTORS\n\t\t\t\t\n\t\t\t\t#if HAS_STRIPS\n\t\t\t\t#define
       BENT_FACTOR_MULTIPLIER 2.0f\n\t\t\t\t#else\n\t\t\t\t#define BENT_FACTOR_MULTIPLIER
       1.41421353816986083984375f\n\t\t\t\t#endif\n\t\t\t\to.VFX_VARYING_BENTFACTORS
@@ -6086,7 +6086,7 @@ MonoBehaviour:
   - m_Id: 0
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614732}
-      inputSlot: {fileID: 8926484042661614858}
+      inputSlot: {fileID: 8926484042661614859}
     position: {x: 432, y: 1503}
     expandedSlots: []
     expanded: 0
@@ -6124,7 +6124,7 @@ MonoBehaviour:
     attributes: []
   m_Direction: 1
   m_LinkedSlots:
-  - {fileID: 8926484042661614858}
+  - {fileID: 8926484042661614859}
 --- !u!114 &8926484042661614733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8682,7 +8682,7 @@ MonoBehaviour:
       m_RegexMaxLength: 0
   m_Direction: 0
   m_LinkedSlots: []
---- !u!114 &8926484042661614858
+--- !u!114 &8926484042661614859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8699,7 +8699,7 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661614858}
+  m_MasterSlot: {fileID: 8926484042661614859}
   m_MasterData:
     m_Owner: {fileID: 114063133802684794}
     m_Value:
